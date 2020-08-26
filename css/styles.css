@@ -352,6 +352,8 @@ body {
 /* ============================================= */
 .main-header h1 {
   text-align: center;
+  margin: 0;
+  padding: 50px 0;
 }
 
 /* ============================================= */
@@ -368,6 +370,7 @@ body {
   display: flex;
   padding: 10px;
   border: 2px solid grey;
+  cursor: pointer;
 }
 .card img {
   width: 128px;
@@ -403,7 +406,7 @@ body {
   top: 5px;
   cursor: pointer;
 }
-.modal-text {
+.modal-content {
   display: flex;
   flex-direction: column;
   align-items: center;
