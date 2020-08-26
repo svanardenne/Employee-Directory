@@ -1,0 +1,14 @@
+/* ============================================= */
+/*                Employee Cards                 */
+/* ============================================= */
+
+.card {
+    display: flex;
+    padding: 10px;
+    border: 2px solid grey;
+    img {
+        width: 128px;
+        height: 128px;
+        border-radius: 50%;
+    }
+}
