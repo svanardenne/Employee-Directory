@@ -2,6 +2,14 @@
 /*                   Base                        */
 /* ============================================= */
 
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin-top: 136px;
+}
+
 body {
     position: relative;
     }

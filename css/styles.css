@@ -340,9 +340,21 @@ template {
 /* ============================================= */
 /*              Typography                       */
 /* ============================================= */
+body {
+  font-size: 0.8em;
+}
+
 /* ============================================= */
 /*                   Base                        */
 /* ============================================= */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin-top: 136px;
+}
+
 body {
   position: relative;
 }
@@ -350,7 +362,16 @@ body {
 /* ============================================= */
 /*                   Header                      */
 /* ============================================= */
+.main-header {
+  background: linear-gradient(to top right, #b31e23, #690f0f);
+  box-shadow: 5px 5px 10px #302B2B;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 136px;
+}
 .main-header h1 {
+  color: white;
   text-align: center;
   margin: 0;
   padding: 50px 0;
@@ -359,23 +380,27 @@ body {
 /* ============================================= */
 /*                Grid Container                 */
 /* ============================================= */
-.grid-container {
-  margin: 10px;
-}
-
 /* ============================================= */
 /*                Employee Cards                 */
 /* ============================================= */
 .card {
   display: flex;
+  align-items: center;
+  justify-content: space-evenly;
   padding: 10px;
-  border: 2px solid grey;
+  border-bottom: 2px solid grey;
   cursor: pointer;
 }
 .card img {
-  width: 128px;
-  height: 128px;
+  min-width: 128px;
   border-radius: 50%;
+  margin: 10px;
+}
+.card .text-container {
+  margin: 10px;
+}
+.card:first-child {
+  border-top: 2px solid grey;
 }
 
 /* ============================================= */
@@ -391,7 +416,7 @@ body {
 }
 
 .modal {
-  width: 375px;
+  width: 200px;
   margin: 15% auto auto;
   position: relative;
   text-align: center;
@@ -420,10 +445,23 @@ body {
 /*              Media Queries                    */
 /* ============================================= */
 @media (min-width: 768px) {
+  body {
+    font-size: 1em;
+  }
+
   .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    margin: 10px;
+  }
+
+  .card {
+    border: 2px solid grey;
+  }
+
+  .modal {
+    width: 275px;
   }
 }
 @media (min-width: 1024px) {

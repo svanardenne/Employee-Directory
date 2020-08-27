@@ -3,10 +3,20 @@
 /* ============================================= */
 
 @media(min-width: 768px) {
+    body {
+        font-size: 1em;
+    }
     .grid-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
+        margin: 10px;
+    }
+    .card{
+        border: 2px solid grey;
+    }
+    .modal {
+        width: 275px;
     }
 }
 
