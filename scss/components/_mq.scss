@@ -3,8 +3,8 @@
 /* ============================================= */
 
 @media(min-width: 768px) {
-    body {
-        font-size: 1em;
+    .card {
+        border-radius: 5px;
     }
     .grid-container {
         display: grid;
@@ -25,8 +25,14 @@
         grid-template-columns: repeat(3, 1fr);
     }
     .main-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         h1 {
-            text-align: left;
+            margin-left: 10px;
+        }
+        .search {
+            margin-right: 10px;
         }
     }
 }

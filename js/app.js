@@ -10,6 +10,7 @@ const gridContainer = document.querySelector(".grid-container");
 const overlay = document.querySelector(".overlay");
 const modalContainer = document.querySelector(".modal-content");
 const modalClose = document.querySelector(".modal-close");
+let modalIndex;
 
 // Global Functions \\
 
@@ -52,7 +53,7 @@ function displayModal(index) {
     let date = new Date(dob.date);
 
     const modalHTML = `
-        <img class="avatar" src="${picture.large}" />
+        <img class="modalAvatar" src="${picture.large}" />
         <div class="text-container">
             <h2 class="modalName">${name.first} ${name.last}</h2>
             <p class="email">${email}</p>
@@ -88,6 +89,7 @@ gridContainer.addEventListener('click', e => {
     if (e.target !== gridContainer) {
     const card = e.target.closest(".card");
     const index = card.getAttribute('data-index');
+    modalIndex = index;
     displayModal(index);
     }
 });
@@ -99,15 +101,24 @@ modalClose.addEventListener('click', () => {
 
 
 // Create slideshow functionality for the modal card
-const slideContent = document.getElementsByClassName('card');
-overlay.addEventListener('click', (e) => {
-    for (i = 0; i < slideContent.length; i++) {
-        let modalName = document.getElementsByClassName('modalName')[0];
-        let name = document.getElementsByClassName('name');
-        console.log(modalName.textContent);
-        console.log(name[i].textContent);
-        if (modalName.textContent === name[i].textContent) {
-            modalContainer.innerHTML = slideContent[i].nextElementSibling.innerHTML;
-        } 
+const rightArrow = document.querySelector('.right-arrow');
+rightArrow.addEventListener('click', (e) => {
+    if (modalIndex < 11) {
+        modalIndex++;
+        displayModal(modalIndex);
+    } else if (modalIndex === 11) {
+        modalIndex = 0;
+    displayModal(modalIndex);
+    }
+});
+
+const leftArrow = document.querySelector('.left-arrow');
+leftArrow.addEventListener('click', (e) => {
+    if (modalIndex > 0) {
+        modalIndex--;
+        displayModal(modalIndex);
+    } else if (modalIndex === 0) {
+        modalIndex = 11;
+    displayModal(modalIndex);
     }
 });

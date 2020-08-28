@@ -379,29 +379,39 @@ body {
 }
 .main-header .search {
   margin: 0 auto;
-  border: 2px solid #b3b11e;
   display: inline-block;
+}
+.main-header .searchbar {
+  padding: 5px 0;
+  outline: none;
+  border: 2px solid #b3b11e;
   border-radius: 6px;
 }
+.main-header .searchbar:focus {
+  border: 3px solid #b3b11e;
+}
 
-/* ============================================= */
-/*                Grid Container                 */
-/* ============================================= */
 /* ============================================= */
 /*                Employee Cards                 */
 /* ============================================= */
 .card {
+  background-color: #f8f8ff;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   padding: 10px;
   border-bottom: 2px solid grey;
   cursor: pointer;
 }
-.card img {
-  min-width: 128px;
-  border-radius: 50%;
+.card:hover {
+  background-color: #eeeeff;
+}
+.card .avatar {
+  min-width: 64px;
+  width: 64px;
   margin: 10px;
+  border-radius: 50%;
+  border: 2px solid grey;
 }
 .card .text-container {
   margin: 10px;
@@ -414,13 +424,13 @@ body {
 /*                   Overlay                     */
 /* ============================================= */
 .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background: rgba(100, 100, 100, 0.4);
-  z-index: 1000;
+  z-index: 3000;
 }
 
 .modal {
@@ -428,21 +438,42 @@ body {
   margin: 15% auto auto;
   position: relative;
   text-align: center;
-  background: #fff;
+  background: #f8f8ff;
   border: 1px solid #778;
   border-radius: 5px;
   padding: 30px 20px;
+  border: 2px solid grey;
 }
 .modal-close {
   position: absolute;
   right: 15px;
-  top: 5px;
+  top: -15px;
   cursor: pointer;
+  font-size: 30px;
 }
 .modal-content {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.modal .arrows {
+  width: 400px;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.modal .left-arrow,
+.modal .right-arrow {
+  cursor: pointer;
+  font-size: 60px;
+  font-weight: 1000;
+}
+.modal .modalAvatar {
+  border-radius: 50%;
+  border: 2px solid grey;
 }
 
 .hidden {
@@ -453,8 +484,8 @@ body {
 /*              Media Queries                    */
 /* ============================================= */
 @media (min-width: 768px) {
-  body {
-    font-size: 1em;
+  .card {
+    border-radius: 5px;
   }
 
   .grid-container {
@@ -477,8 +508,16 @@ body {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   .main-header h1 {
-    text-align: left;
+    margin-left: 10px;
+  }
+  .main-header .search {
+    margin-right: 10px;
   }
 }
 
