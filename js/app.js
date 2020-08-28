@@ -99,8 +99,15 @@ modalClose.addEventListener('click', () => {
 
 
 // Create slideshow functionality for the modal card
+const slideContent = document.getElementsByClassName('card');
 overlay.addEventListener('click', (e) => {
-    if (e.target.className === 'overlay') {
-        
+    for (i = 0; i < slideContent.length; i++) {
+        let modalName = document.getElementsByClassName('modalName')[0];
+        let name = document.getElementsByClassName('name');
+        console.log(modalName.textContent);
+        console.log(name[i].textContent);
+        if (modalName.textContent === name[i].textContent) {
+            modalContainer.innerHTML = slideContent[i].nextElementSibling.innerHTML;
+        } 
     }
 });

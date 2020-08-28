@@ -10,8 +10,6 @@ search.addEventListener('keyup', (e) => {
     let search = searchbar.value.toLowerCase();
     for (i = 0; i < card.length; i++) {
         let name = names[i].textContent.toLowerCase();
-        console.log(name);
-        console.log(search);
         if (name.includes(search)) {
             card[i].classList.remove('hidden');
         } else {
