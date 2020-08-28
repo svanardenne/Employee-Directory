@@ -96,3 +96,11 @@ gridContainer.addEventListener('click', e => {
 modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
 });
+
+
+// Create slideshow functionality for the modal card
+overlay.addEventListener('click', (e) => {
+    if (e.target.className === 'overlay') {
+        
+    }
+});

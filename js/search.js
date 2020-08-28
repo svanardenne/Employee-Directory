@@ -3,18 +3,19 @@
 /* ============================================= */
 const search = document.querySelector('.search');
 const searchbar = document.querySelector('.searchbar');
-const card = document.querySelectorAll('.card');
+const card = document.getElementsByClassName('card');
 const names = document.getElementsByClassName('name');
 
 search.addEventListener('keyup', (e) => {
-    for (i = 0; i < names.length; i++) {
-        let name = names[i]
+    let search = searchbar.value.toLowerCase();
+    for (i = 0; i < card.length; i++) {
+        let name = names[i].textContent.toLowerCase();
         console.log(name);
-        console.log(searchbar.value);
-        if (searchbar.value.includes(name)) {
-            card[i].style.display = 'block';
+        console.log(search);
+        if (name.includes(search)) {
+            card[i].classList.remove('hidden');
         } else {
-            card[i].style.display = 'hidden';
+            card[i].classList.add("hidden");
         }
     }
 });
