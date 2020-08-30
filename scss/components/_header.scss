@@ -21,10 +21,13 @@
         display: inline-block; 
     }
     .searchbar {
+        width: 300px;
+        font-size: 1.2em;
         padding: 5px 0;
         outline: none;
         border: 2px solid #b3b11e;
         border-radius: 6px;
+        background-color: #f8f8ff;
         &:focus {
             border: 3px solid #b3b11e;
         }

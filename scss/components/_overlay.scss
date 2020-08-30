@@ -46,8 +46,25 @@
     .left-arrow,
     .right-arrow {
         cursor: pointer;
+        color: #b31e23;
         font-size: 60px;
         font-weight: 1000;
+        transition: .5s ease-out;
+    }
+    .left-arrow:hover,
+    .right-arrow:hover {
+        color: lighten(#b31e23, 10%);
+        
+    }
+    .left-arrow::selection,
+    .right-arrow::selection {
+        color: none;
+        background: none;
+    }
+    .left-arrow::-moz-selection,
+    .right-arrow::-moz-selection {
+        color: none;
+        background: none;
     }
     .modalAvatar {
         border-radius: 50%;

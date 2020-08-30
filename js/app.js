@@ -45,7 +45,8 @@ function displayModal(index) {
     let phone = employees[index].phone;
     let email = employees[index].email;
     let city = employees[index].location.city;
-    let street = employees[index].location.street;
+    let streetNumber = employees[index].location.street.number;
+    let streetName = employees[index].location.street.name;
     let state = employees[index].location.state;
     let postcode = employees[index].location.postcode;
     let picture = employees[index].picture;
@@ -60,7 +61,7 @@ function displayModal(index) {
             <p class="address">${city}</p>
             <hr />
             <p>${phone}</p>
-            <p class="address">${street}, ${state} ${postcode}</p>
+            <p class="address">${streetNumber} ${streetName}, ${state} ${postcode}</p>
             <p>Birthday:
 ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
         </div>
